@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lb6iyNCilK0lUEHJuIekgkCrcmwOuW23qMSiOibaTzYaeGTIHrj6u9h+3MHuk0VDhSPLemhw6U412ocu6m3yEw==",
+  "dgSpecHash": "fCDV1efpT2s9mkMtl7dJ1X5V1gSa6byvkGXaaxzKtLBUldBY2B7P20w3mwfmSrcE3vQR3X9U6AmqRdsDhf4iIQ==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\PolyVerse\\JukaVerse.NET\\JukaVerse.NET.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\rsrud\\.nuget\\packages\\spectre.console\\0.44.0\\spectre.console.0.44.0.nupkg.sha512"
+  ],
   "logs": []
 }
