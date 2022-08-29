@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace JukaVerse.NET.ASPX
 {
@@ -10,7 +6,8 @@ namespace JukaVerse.NET.ASPX
     {
         public static string RenderIndex()
         {
-            return System.IO.File.ReadAllText("../../host/index.html");
+            WebClient client = new WebClient();
+            return client.DownloadString("https://raw.githubusercontent.com/JukaVerse/JukaVerse.NET/main/host/index.html");
         }
     }
 }
