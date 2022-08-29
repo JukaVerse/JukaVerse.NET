@@ -1,10 +1,11 @@
 ﻿using JukaVerse.NET.server;
+using Microsoft.Extensions.Hosting;
 
 namespace JukaVerse
 {
     public class TEST
     {
-        public static void Main()
+        public static void Main(string[] arguments)
         {
             ServerBuilder serverBuilder = new ServerBuilder();
             NET.schema.Server server = new NET.schema.Server();
@@ -12,7 +13,7 @@ namespace JukaVerse
             server.ONLINE_USERS = new List<NET.schema.User>();
             server.SERVER_PORT = 2999;
 
-            serverBuilder.build(server, "First JukaVerse Server", isPublic: false, requirePassword: true, serverPassword: "123");
+            ServerBuilder.createServer(server, "First JukaVerse Server", arguments, isPublic: false, requirePassword: true, serverPassword: "123").Build().Run();
 
         }
     }

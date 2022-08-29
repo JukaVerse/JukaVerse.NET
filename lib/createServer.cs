@@ -1,21 +1,18 @@
-﻿using Spectre.Console;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Spectre.Console;
 
 namespace JukaVerse.NET.server
 {
     public class ServerBuilder
     {
-        public async void build(JukaVerse.NET.schema.Server serverSchema,
-            string ServerName,
-            bool isPublic = true,
-            bool requirePassword = false,
-            string serverPassword = "")
+        public static IHostBuilder createServer(JukaVerse.NET.schema.Server serverSchema,string ServerName,string[] args,bool isPublic = true,bool requirePassword = false,string serverPassword = "")
         {
-            AnsiConsole.Status().Start("Starting JukaVerse Server", ctx =>
+            IHostBuilder host = Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
             {
-                string isPublinConf = isPublic == true ? "[yellow]Server is set to public privacy.[/]" : "[yellow]Server is set to private privacy.[/]";
-                Thread.Sleep(1000);
-                AnsiConsole.MarkupLine(isPublinConf);                
+                webBuilder.UseStartup<ASPX.ASMXWebServices>();
             });
+            return host;
         }
     }
 }
